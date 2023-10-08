@@ -1,7 +1,12 @@
-export const FeedbackList = ({ onChangeFeedback }) => {
-    return <ul>
-        <button onClick={() => { onChangeFeedback('good')} } type="button">Good </button>
-<button onClick={() => {onChangeFeedback('neutral')}} type="button">Neutral</button>
-<button onClick={() => {onChangeFeedback('bad')}} type="button">Bad</button>
+import styles from './Feedback.module.css'
+import { nanoid } from 'nanoid';
+
+export const FeedbackList = ({ onChangeFeedback, options }) => {
+    return <ul className={styles.buttonList}>
+        {options.map(option => {
+            return <li key={nanoid()}><button onClick={() => { onChangeFeedback(option)} } className={styles.button}>{option.toUpperCase()}</button></li>
+        })}
+        
     </ul>
 }
+

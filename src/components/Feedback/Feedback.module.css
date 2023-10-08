@@ -1,0 +1,14 @@
+.buttonList {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+.button {
+  width: 100px;
+  height: 45px;
+}
+
+.button:hover {
+  background-color: azure;
+}
